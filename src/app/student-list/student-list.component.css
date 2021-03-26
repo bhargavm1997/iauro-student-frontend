@@ -1,0 +1,13 @@
+table.mat-table {
+    display: table;
+    width: 100%;
+   
+}
+
+th {
+    background-color: red;
+    color: white;
+}
+
+
+

@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="container-fluid" id="main">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+        <div class="col main pt-5 mt-3">
+            <div class="row mb-3">
+                <div class="col-sm-8">
+                    <h2>Student Edit</h2>
+                </div>
+
+                <div class="example-container">
+                    <div class="form-container">
+                        <mat-form-field class="form-field" appearance="outline">
+                          <mat-label> Name
+                          </mat-label>
+                          <input matInput [(ngModel)]="name">
+                          
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field class="form-field" appearance="outline">
+                          <mat-label> Address
+                          </mat-label>
+                          <input matInput [(ngModel)]="address" type="text">
+                          
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field class="form-field" appearance="outline">
+                            <mat-label> Mobile Number
+                            </mat-label>
+                            <input matInput [(ngModel)]="mobileNumber" type="text">
+                            
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field class="form-field" appearance="outline">
+                            <mat-label> Gender
+                            </mat-label>
+                            <input matInput [(ngModel)]="gender" type="text">
+                            
+                          </mat-form-field>
+                          <br>
+                        <button (click)="editStudent()" mat-raised-button color="primary" type="submit">Edit Student</button>
+                    </div>
+                  </div> 
+                </div>
+                </div>
+                </div>
+                </div>
+                
