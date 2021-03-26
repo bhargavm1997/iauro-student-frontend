@@ -21,12 +21,16 @@ export class StudentService {
   }
 
   deleteStudent(data):Observable<any>{
-    return this.http.delete(this.url+"/delete/"+data.id)
+    return this.http.delete<StudentData>(this.url+"/delete?id="+data.studentId)
 
   }
 
   editStudent(data):Observable<any>{
-    return this.http.put(this.url+"/edit/"+data.id,data)
+    return this.http.put<StudentData>(this.url+"/edit?id="+data.studentId,data)
+
+  }
+  getStudent(id):Observable<any>{
+    return this.http.get<StudentData>(this.url+"/get?id="+id)
 
   }
 }

@@ -9,37 +9,43 @@
                 </div>
 
                 <div class="example-container">
-                    <div class="form-container">
+                    <div class="form-container" *ngIf="this.studentData">
                         <mat-form-field class="form-field" appearance="outline">
                           <mat-label> Name
                           </mat-label>
-                          <input matInput [(ngModel)]="name">
+                          <input matInput [(ngModel)]="this.studentData.name">
                           
                         </mat-form-field>
                         <br>
                         <mat-form-field class="form-field" appearance="outline">
                           <mat-label> Address
                           </mat-label>
-                          <input matInput [(ngModel)]="address" type="text">
+                          <textarea matInput [(ngModel)]="this.studentData.address" ></textarea>
                           
                         </mat-form-field>
                         <br>
                         <mat-form-field class="form-field" appearance="outline">
                             <mat-label> Mobile Number
                             </mat-label>
-                            <input matInput [(ngModel)]="mobileNumber" type="text">
+                            <input matInput [(ngModel)]="this.studentData.mobileNumber" type="text" maxlength="10">
                             
                           </mat-form-field>
                           <br>
                           <mat-form-field class="form-field" appearance="outline">
                             <mat-label> Gender
                             </mat-label>
-                            <input matInput [(ngModel)]="gender" type="text">
+                            <mat-select matNativeControl [(ngModel)]="this.studentData.gender" >
+                              <mat-option *ngFor="let g of this.genders" [value]="g">{{g}}</mat-option>
+
+                            </mat-select>
+                          
                             
                           </mat-form-field>
                           <br>
-                        <button (click)="editStudent()" mat-raised-button color="primary" type="submit">Edit Student</button>
-                    </div>
+                        <button (click)="editStudent()" mat-raised-button color="primary" type="submit">Edit Student</button> &nbsp;&nbsp;
+                        <button (click)="back()" mat-raised-button color="primary" >Back</button>
+
+                      </div>
                   </div> 
                 </div>
                 </div>

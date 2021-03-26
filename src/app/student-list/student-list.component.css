@@ -1,13 +1,19 @@
 table.mat-table {
     display: table;
     width: 100%;
-   
+    margin-left: 10%;
+    margin-right: 10%;
+
 }
 
 th {
-    background-color: red;
+    background-color: #c0392b;
     color: white;
 }
 
+
+.cdk-global-overlay-wrapper {
+    z-index: 1000;
+}
 
 

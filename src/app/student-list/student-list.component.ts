@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../student.service';  
 import { StudentData } from '../student';  
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -11,7 +13,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
-  displayedColumns = ['name', 'gender', 'address','action'];
+  displayedColumns = ['name', 'gender', 'address','mobile number','action'];
 
   dataSource:StudentData[]
   name:String
@@ -20,14 +22,14 @@ export class StudentListComponent implements OnInit {
   studentData:any
   mobileNumber:string
   genders=["Male","Female"]
-  constructor(private studentService : StudentService) { }
+
+  constructor(private studentService : StudentService,private router:Router,private toaster:ToastrService) { }
 
   ngOnInit(){
 
     this.studentService.getStudents().subscribe(data =>
       {
         this.dataSource = data["data"]
-        console.log(this.dataSource)
       }); 
   }
 
@@ -45,28 +47,29 @@ export class StudentListComponent implements OnInit {
         console.log(data["status"])
         if(data["status"]==200)
         {
-          window.location.reload();
-
+          alert("Student added successfully")
+          setTimeout(() => {
+            window.location.reload();   
+          }, 1000);
         }
       })
   }
 
   deleteStudent(studentData)
   {
-    console.log(studentData)
     this.studentService.deleteStudent(studentData).subscribe(
       data=>{
-        console.log(data["status"])
         if(data["status"]==200)
         {
-          
+          alert("Student deleted successfully")
+          setTimeout(() => {
+            window.location.reload();   
+          }, 1000);
+
         }
       })
   }
-  editStudent(data)
-  {
-    this.router.navigate(["/student/edit/",data.id])
-  }
+ 
 
 
   

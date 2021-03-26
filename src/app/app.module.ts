@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 
 import { StudentService } from './student.service';  
 import { MatDialogModule } from '@angular/material/dialog';
@@ -46,9 +47,12 @@ import { StudentEditComponent } from './student-edit/student-edit.component';
     MatCardModule,
     FormsModule,
     MatInputModule,
+    MatSelectModule,
     RouterModule.forRoot([
       {path:"",component:StudentListComponent},
-     {path:"student/list",component:StudentListComponent}
+     {path:"student/list",component:StudentListComponent},
+     {path:"student/edit/:id",component:StudentEditComponent}
+
     ])
   ],
   providers: [StudentService],
