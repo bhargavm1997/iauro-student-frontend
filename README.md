@@ -1,3 +1,7 @@
+Node backend url
+
+http://13.233.154.73:3000/student
+
 # IauroStud
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
