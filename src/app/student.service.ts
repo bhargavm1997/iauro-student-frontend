@@ -8,7 +8,7 @@ import { StudentData } from './student';
 })
 
 export class StudentService {
-  private url : string ='http://localhost:3000/student';  
+  private url : string ='http://13.233.154.73:3000/student';  
 
   constructor(private http: HttpClient) { }
 
